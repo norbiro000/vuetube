@@ -5,6 +5,9 @@
 <script>
 import VideoScreen from './_components/VideoScreen'
 export default {
+  created () {
+    document.title = 'VueTube'
+  },
   components: {
     VideoScreen
   }

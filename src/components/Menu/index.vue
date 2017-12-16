@@ -1,5 +1,5 @@
 <template>
-  <div id="topmenu" class="ui secondary menu ">
+  <div id="topmenu" class="ui secondary  menu ">
     <a
       class="item"
       v-for="(menu,i) in menus"
@@ -39,7 +39,6 @@
         return index === this.active ? 'active' : ''
       },
       changeRoute (index) {
-        alert(index)
         this.active = index
       }
     }

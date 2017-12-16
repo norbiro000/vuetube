@@ -33,4 +33,7 @@ export default {
 </script>
 
 <style>
+  .player {
+    background-color: white;
+  }
 </style>

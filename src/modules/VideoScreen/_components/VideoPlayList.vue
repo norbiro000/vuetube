@@ -2,7 +2,7 @@
 <template>
 <div>
   <h5>รายการแนะนำ</h5>
-  <div class="ui items">
+  <div class="ui unstackable items">
     <div class="item" v-for="(vdo, index) in videos">
       <div class="image">
         <img :src="vdo.thumbnail" @click="changeVideo(index)">
