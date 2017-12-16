@@ -1,5 +1,5 @@
 <template>
-  <div class="ui secondary pointing menu">
+  <div id="topmenu" class="ui secondary menu ">
     <a
       class="item"
       v-for="(menu,i) in menus"
@@ -7,8 +7,13 @@
       @click="changeRoute(i)"
       :key="menu.title"
       :to="menu.path">{{ menu.title }}</a>
-    
+
     <div class="right menu">
+      <div class="ui icon input">
+        <input type="text" placeholder="Search...">
+        <i class="search link icon"></i>
+      </div>
+
       <a class="ui item active">
         Logout
       </a>
@@ -23,11 +28,7 @@
         active: 0,
         menus: [
           {
-            title: 'Home',
-            path: '/'
-          },
-          {
-            title: 'Manage',
+            title: 'Vue Tube',
             path: '/'
           }
         ]
@@ -44,3 +45,9 @@
     }
   }
 </script>
+<style scoped>
+#topmenu {
+  padding: 10px;
+  box-shadow: 5px 0px 5px rgba(1, 1, 1, 0.1)
+}
+</style>
