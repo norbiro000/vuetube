@@ -16,6 +16,7 @@ export default {
     refreshDOM () {
       if (this.vdo) {
         this.$nextTick(() => {
+          document.title = this.vdo.title
           window.$(this.$refs.player).embed({
             autoplay: true
           })
