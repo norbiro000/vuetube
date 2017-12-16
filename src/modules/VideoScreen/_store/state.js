@@ -31,7 +31,7 @@ export default {
       title: 'สิงโต นำโชค - ต๊อก (TOK) [Official Lyrics Video]',
       description: '',
       meta: 'Whattheduck'
-    },
+    }
   ],
   playingVideo: ''
 }
