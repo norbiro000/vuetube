@@ -1,5 +1,5 @@
 <template>
-  <VideoScreen></VideoScreen>
+  <VideoScreen class="ui container videoscreen"></VideoScreen>
 </template>
 
 <script>
@@ -10,3 +10,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.videoscreen {
+  position: relative;
+  top: 32px;
+}
+</style>

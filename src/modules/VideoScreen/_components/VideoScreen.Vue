@@ -1,17 +1,18 @@
 <template>
-    <div class="ui ">
+    <div class="ui stackable doubling two column grid">
       <screen
         v-if="playingVideo"
         :vdo="playingVideo"
-        class="ui eight wide column videos segment">
+        class="ui ten wide column videos">
       </screen>
       <ScreenIsLoading v-else
-      class="ui eight wide column videos"/>
+      class="ui ten wide column videos"/>
+
       <playList
         id="playlist"
         :videos="videos"
         @videoDidChange="videoDidChange"
-        class="ui two wide column">
+        class="ui six wide column">
       </playList>
     </div>
 </template>
@@ -49,13 +50,8 @@ export default {
 }
 </script>
 
-<style>
-#playlist {
-  position: relative;
-  top: 50px;
-}
-
+<style scoped>
 .videos {
-  min-height: 350px;
+  height: 400px;
 }
 </style>

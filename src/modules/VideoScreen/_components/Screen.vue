@@ -1,5 +1,5 @@
 <template>
-  <div class="ui grid embed"
+  <div class="ui embed"
     :data-source="vdo.dataSource"
     :data-id="vdo.dataID"
     ref="player">
@@ -16,7 +16,9 @@ export default {
     refreshDOM () {
       if (this.vdo) {
         this.$nextTick(() => {
-          window.$(this.$refs.player).embed()
+          window.$(this.$refs.player).embed({
+            autoplay: true
+          })
         })
       }
     }
