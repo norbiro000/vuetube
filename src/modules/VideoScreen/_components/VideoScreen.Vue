@@ -1,22 +1,61 @@
 <template>
-  <div class="ui embed"
-    data-source="vimeo"
-    data-id="125292332"
-    data-placeholder="https://www.1112.com/images/products/pizza/website/Pan_Ham&Crab-Sticks.png"
-    ref="player">
-  </div>
+    <div class="ui ">
+      <screen
+        v-if="playingVideo"
+        :vdo="playingVideo"
+        class="ui eight wide column videos segment">
+      </screen>
+      <ScreenIsLoading v-else
+      class="ui eight wide column videos"/>
+      <playList
+        id="playlist"
+        :videos="videos"
+        @videoDidChange="videoDidChange"
+        class="ui two wide column">
+      </playList>
+    </div>
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
+import store from '../_store'
+import Screen from './Screen'
+import ScreenIsLoading from './ScreenIsLoading'
+import PlayList from './VideoPlayList'
 export default {
-  mounted () {
-    window.$(this.$refs.player).embed()
+  data () {
+    return {
+    }
+  },
+  computed: {
+    ...mapState('$_video', {
+      videos: 'videos',
+      playingVideo: 'playingVideo'
+    })
+  },
+  created () {
+    this.$store.registerModule('$_video', store)
+  },
+  methods: {
+    ...mapActions('$_video', {
+      videoDidChange: 'changeVideo'
+    })
+  },
+  components: {
+    Screen,
+    PlayList,
+    ScreenIsLoading
   }
 }
 </script>
 
 <style>
-#screen {
-  background: black;
+#playlist {
+  position: relative;
+  top: 50px;
+}
+
+.videos {
+  min-height: 350px;
 }
 </style>

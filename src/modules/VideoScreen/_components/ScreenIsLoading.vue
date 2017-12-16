@@ -1,0 +1,8 @@
+<template>
+  <div class="ui embed">
+    <div class="ui active inverted dimmer">
+      <div class="ui text loader">Loading</div>
+    </div>
+    <p></p>
+  </div>
+</template>
