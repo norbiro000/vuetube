@@ -7,8 +7,10 @@
 
 <script>
 import TopMenu from '@/components/Menu'
+import AuthMixinx from '@/components/Authentication/mixins'
 export default {
   name: 'app',
+  mixins: [AuthMixinx],
   data () {
     return {
       title: 'Vue Tube'

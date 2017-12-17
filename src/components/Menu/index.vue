@@ -14,7 +14,8 @@
         <i class="search link icon"></i>
       </div>
 
-      <a class="ui item active">
+      <a class="ui item active"
+        @click="logout">
         Logout
       </a>
     </div>
@@ -40,6 +41,9 @@
       },
       changeRoute (index) {
         this.active = index
+      },
+      logout () {
+        this.$store.dispatch('$_authentication/logout')
       }
     }
   }
