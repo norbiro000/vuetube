@@ -11,12 +11,5 @@ export default {
     ...mapState('$_site', {
       siteName: 'siteName'
     })
-  },
-  mounted () {
-    if (this.siteName) {
-      alert('Done')
-    } else {
-      alert('Faile')
-    }
   }
 }
