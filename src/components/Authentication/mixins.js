@@ -22,14 +22,17 @@ export default {
     isLogin (from) {
       if (!this.user) {
         this.$router.push('/login')
+      } else {
+        this.$router.push('/')
       }
+    },
+    gotoHomePage () {
+      this.$router.push('/')
     }
   },
   watch: {
     user (newUser, oldUser) {
-      if (newUser !== oldUser) {
-        this.isLogin('watcher')
-      }
+      this.isLogin()
     }
   }
 }
