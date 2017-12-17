@@ -1,4 +1,6 @@
 import Promise from 'bluebird'
+import { CognitoRegister } from '../Cognito'
+
 function _mockLoginLogic (userInfo) {
   return new Promise((resolve, reject) => {
     let loginResponse
@@ -33,6 +35,14 @@ export default {
       } else {
         alert(`${response.message}`)
       }
+    })
+  },
+  register ({state, commit}, userInfo) {
+    CognitoRegister(userInfo)
+    .then(response => {
+      alert('Register Success')
+    }).catch(e => {
+      alert(e)
     })
   }
 }
